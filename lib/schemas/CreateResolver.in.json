@@ -1,0 +1,93 @@
+{
+    "type": "object",
+    "properties": {
+        "apiId": {
+            "required": true,
+            "type": "string"
+        },
+        "typeName": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "dataSourceName": {
+                    "description": "The name of the data source for which the resolver is being created.",
+                    "pattern": "[_A-Za-z][_0-9A-Za-z]*",
+                    "type": "string"
+                },
+                "fieldName": {
+                    "description": "The name of the field to attach the resolver to.",
+                    "pattern": "[_A-Za-z][_0-9A-Za-z]*",
+                    "type": "string"
+                },
+                "kind": {
+                    "description": "<p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A UNIT resolver is the default resolver type. A UNIT resolver enables you to execute a GraphQL query against a single data source.</p> </li> <li> <p> <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to execute a series of <code>Function</code> in a serial manner. You can use a pipeline resolver to execute a GraphQL query against multiple data sources.</p> </li> </ul>",
+                    "enum": [
+                        "UNIT",
+                        "PIPELINE"
+                    ],
+                    "type": "string"
+                },
+                "pipelineConfig": {
+                    "description": "The <code>PipelineConfig</code>.",
+                    "properties": {
+                        "functions": {
+                            "description": "A list of <code>Function</code> objects.",
+                            "items": {
+                                "type": "string"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "requestMappingTemplate": {
+                    "description": "<p>The mapping template to be used for requests.</p> <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>",
+                    "maxLength": 65536,
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "responseMappingTemplate": {
+                    "description": "The mapping template to be used for responses from the data source.",
+                    "maxLength": 65536,
+                    "minLength": 1,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "fieldName",
+                "requestMappingTemplate"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

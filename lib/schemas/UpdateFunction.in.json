@@ -1,0 +1,82 @@
+{
+    "type": "object",
+    "properties": {
+        "apiId": {
+            "required": true,
+            "type": "string"
+        },
+        "functionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "dataSourceName": {
+                    "description": "The <code>Function</code> <code>DataSource</code> name.",
+                    "pattern": "[_A-Za-z][_0-9A-Za-z]*",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "The <code>Function</code> description.",
+                    "type": "string"
+                },
+                "functionVersion": {
+                    "description": "The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29. ",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The <code>Function</code> name.",
+                    "pattern": "[_A-Za-z][_0-9A-Za-z]*",
+                    "type": "string"
+                },
+                "requestMappingTemplate": {
+                    "description": "The <code>Function</code> request mapping template. Functions support only the 2018-05-29 version of the request mapping template.",
+                    "maxLength": 65536,
+                    "minLength": 1,
+                    "type": "string"
+                },
+                "responseMappingTemplate": {
+                    "description": "The <code>Function</code> request mapping template. ",
+                    "maxLength": 65536,
+                    "minLength": 1,
+                    "type": "string"
+                }
+            },
+            "required": [
+                "name",
+                "dataSourceName",
+                "requestMappingTemplate",
+                "functionVersion"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

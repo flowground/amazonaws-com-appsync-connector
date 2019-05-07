@@ -1,0 +1,143 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "authenticationType": {
+                    "description": "The authentication type: API key, AWS IAM, or Amazon Cognito user pools.",
+                    "enum": [
+                        "API_KEY",
+                        "AWS_IAM",
+                        "AMAZON_COGNITO_USER_POOLS",
+                        "OPENID_CONNECT"
+                    ],
+                    "type": "string"
+                },
+                "logConfig": {
+                    "description": "The Amazon CloudWatch Logs configuration.",
+                    "properties": {
+                        "cloudWatchLogsRoleArn": {
+                            "description": "The service role that AWS AppSync will assume to publish to Amazon CloudWatch logs in your account. ",
+                            "type": "string"
+                        },
+                        "fieldLogLevel": {
+                            "description": "<p>The field logging level. Values can be NONE, ERROR, or ALL. </p> <ul> <li> <p> <b>NONE</b>: No field-level logs are captured.</p> </li> <li> <p> <b>ERROR</b>: Logs the following information only for the fields that are in error:</p> <ul> <li> <p>The error section in the server response.</p> </li> <li> <p>Field-level errors.</p> </li> <li> <p>The generated request/response functions that got resolved for error fields.</p> </li> </ul> </li> <li> <p> <b>ALL</b>: The following information is logged for all fields in the query:</p> <ul> <li> <p>Field-level tracing information.</p> </li> <li> <p>The generated request/response functions that got resolved for each field.</p> </li> </ul> </li> </ul>",
+                            "enum": [
+                                "NONE",
+                                "ERROR",
+                                "ALL"
+                            ],
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "fieldLogLevel",
+                        "cloudWatchLogsRoleArn"
+                    ],
+                    "type": "object"
+                },
+                "name": {
+                    "description": "A user-supplied name for the <code>GraphqlApi</code>.",
+                    "type": "string"
+                },
+                "openIDConnectConfig": {
+                    "description": "The OpenID Connect configuration.",
+                    "properties": {
+                        "authTTL": {
+                            "description": "The number of milliseconds a token is valid after being authenticated.",
+                            "type": "integer"
+                        },
+                        "clientId": {
+                            "description": "The client identifier of the Relying party at the OpenID identity provider. This identifier is typically obtained when the Relying party is registered with the OpenID identity provider. You can specify a regular expression so the AWS AppSync can validate against multiple client identifiers at a time.",
+                            "type": "string"
+                        },
+                        "iatTTL": {
+                            "description": "The number of milliseconds a token is valid after being issued to a user.",
+                            "type": "integer"
+                        },
+                        "issuer": {
+                            "description": "The issuer for the OpenID Connect configuration. The issuer returned by discovery must exactly match the value of <code>iss</code> in the ID token.",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "issuer"
+                    ],
+                    "type": "object"
+                },
+                "userPoolConfig": {
+                    "description": "The Amazon Cognito user pool configuration.",
+                    "properties": {
+                        "appIdClientRegex": {
+                            "description": "A regular expression for validating the incoming Amazon Cognito user pool app client ID.",
+                            "type": "string"
+                        },
+                        "awsRegion": {
+                            "description": "The AWS Region in which the user pool was created.",
+                            "type": "string"
+                        },
+                        "defaultAction": {
+                            "description": "The action that you want your GraphQL API to take when a request that uses Amazon Cognito user pool authentication doesn't match the Amazon Cognito user pool configuration.",
+                            "enum": [
+                                "ALLOW",
+                                "DENY"
+                            ],
+                            "type": "string"
+                        },
+                        "userPoolId": {
+                            "description": "The user pool ID.",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "userPoolId",
+                        "awsRegion",
+                        "defaultAction"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "name",
+                "authenticationType"
+            ],
+            "type": "object"
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

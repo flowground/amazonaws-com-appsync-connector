@@ -1,0 +1,601 @@
+{
+    "title": "AWS AppSync",
+    "description": "AWS AppSync provides API actions for creating and interacting with data sources using GraphQL from your application.",
+    "docsUrl": "https://aws.amazon.com/appsync/",
+    "url": "https://api.apis.guru/v2/specs/amazonaws.com/appsync/2017-07-25/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://appsync.amazonaws.com/",
+                    "http://appsync.amazonaws.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "hmac": {
+                "label": "Authorization (hmac)",
+                "viewClass": "TextFieldView",
+                "note": "Amazon Signature authorization v4"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "ListGraphqlApis": {
+            "main": "./lib/actions/ListGraphqlApis.js",
+            "title": "Lists your GraphQL APIs.",
+            "description": "Lists your GraphQL APIs.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListGraphqlApis.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateGraphqlApi": {
+            "main": "./lib/actions/CreateGraphqlApi.js",
+            "title": "Creates a <code>GraphqlApi</code> object.",
+            "description": "Creates a <code>GraphqlApi</code> object.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateGraphqlApi.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteGraphqlApi": {
+            "main": "./lib/actions/DeleteGraphqlApi.js",
+            "title": "Deletes a <code>GraphqlApi</code> object.",
+            "description": "Deletes a <code>GraphqlApi</code> object.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteGraphqlApi.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetGraphqlApi": {
+            "main": "./lib/actions/GetGraphqlApi.js",
+            "title": "Retrieves a <code>GraphqlApi</code> object.",
+            "description": "Retrieves a <code>GraphqlApi</code> object.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetGraphqlApi.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateGraphqlApi": {
+            "main": "./lib/actions/UpdateGraphqlApi.js",
+            "title": "Updates a <code>GraphqlApi</code> object.",
+            "description": "Updates a <code>GraphqlApi</code> object.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateGraphqlApi.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListApiKeys": {
+            "main": "./lib/actions/ListApiKeys.js",
+            "title": "<p>Lists the API keys for a given API.</p> <note> <p>API keys are deleted automatically sometime after they expire. However, they may still be included in the response until they have actually been deleted. You can safely call <code>DeleteApiKey</code> to manually delete a key before it's automatically deleted.</p> </note>",
+            "description": "<p>Lists the API keys for a given API.</p> <note> <p>API keys are deleted automatically sometime after they expire. However, they may still be included in the response until they have actually been deleted. You can safely call <code>DeleteApiKey</code> to manually delete a key before it's automatically deleted.</p> </note>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListApiKeys.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateApiKey": {
+            "main": "./lib/actions/CreateApiKey.js",
+            "title": "Creates a unique key that you can distribute to clients who are executing your API.",
+            "description": "Creates a unique key that you can distribute to clients who are executing your API.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateApiKey.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteApiKey": {
+            "main": "./lib/actions/DeleteApiKey.js",
+            "title": "Deletes an API key.",
+            "description": "Deletes an API key.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteApiKey.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateApiKey": {
+            "main": "./lib/actions/UpdateApiKey.js",
+            "title": "Updates an API key.",
+            "description": "Updates an API key.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateApiKey.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListDataSources": {
+            "main": "./lib/actions/ListDataSources.js",
+            "title": "Lists the data sources for a given API.",
+            "description": "Lists the data sources for a given API.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListDataSources.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateDataSource": {
+            "main": "./lib/actions/CreateDataSource.js",
+            "title": "Creates a <code>DataSource</code> object.",
+            "description": "Creates a <code>DataSource</code> object.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateDataSource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteDataSource": {
+            "main": "./lib/actions/DeleteDataSource.js",
+            "title": "Deletes a <code>DataSource</code> object.",
+            "description": "Deletes a <code>DataSource</code> object.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteDataSource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetDataSource": {
+            "main": "./lib/actions/GetDataSource.js",
+            "title": "Retrieves a <code>DataSource</code> object.",
+            "description": "Retrieves a <code>DataSource</code> object.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetDataSource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateDataSource": {
+            "main": "./lib/actions/UpdateDataSource.js",
+            "title": "Updates a <code>DataSource</code> object.",
+            "description": "Updates a <code>DataSource</code> object.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateDataSource.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListFunctions": {
+            "main": "./lib/actions/ListFunctions.js",
+            "title": "List multiple functions.",
+            "description": "List multiple functions.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListFunctions.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateFunction": {
+            "main": "./lib/actions/CreateFunction.js",
+            "title": "<p>Creates a <code>Function</code> object.</p> <p>A function is a reusable entity. Multiple functions can be used to compose the resolver logic.</p>",
+            "description": "<p>Creates a <code>Function</code> object.</p> <p>A function is a reusable entity. Multiple functions can be used to compose the resolver logic.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateFunction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteFunction": {
+            "main": "./lib/actions/DeleteFunction.js",
+            "title": "Deletes a <code>Function</code>.",
+            "description": "Deletes a <code>Function</code>.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteFunction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetFunction": {
+            "main": "./lib/actions/GetFunction.js",
+            "title": "Get a <code>Function</code>.",
+            "description": "Get a <code>Function</code>.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetFunction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateFunction": {
+            "main": "./lib/actions/UpdateFunction.js",
+            "title": "Updates a <code>Function</code> object.",
+            "description": "Updates a <code>Function</code> object.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateFunction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListResolversByFunction": {
+            "main": "./lib/actions/ListResolversByFunction.js",
+            "title": "List the resolvers that are associated with a specific function.",
+            "description": "List the resolvers that are associated with a specific function.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListResolversByFunction.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetIntrospectionSchema": {
+            "main": "./lib/actions/GetIntrospectionSchema.js",
+            "title": "Retrieves the introspection schema for a GraphQL API.",
+            "description": "Retrieves the introspection schema for a GraphQL API.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetIntrospectionSchema.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetSchemaCreationStatus": {
+            "main": "./lib/actions/GetSchemaCreationStatus.js",
+            "title": "Retrieves the current status of a schema creation operation.",
+            "description": "Retrieves the current status of a schema creation operation.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetSchemaCreationStatus.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "StartSchemaCreation": {
+            "main": "./lib/actions/StartSchemaCreation.js",
+            "title": "<p>Adds a new schema to your GraphQL API.</p> <p>This operation is asynchronous. Use to determine when it has completed.</p>",
+            "description": "<p>Adds a new schema to your GraphQL API.</p> <p>This operation is asynchronous. Use to determine when it has completed.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/StartSchemaCreation.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListTypes": {
+            "main": "./lib/actions/ListTypes.js",
+            "title": "Lists the types for a given API.",
+            "description": "Lists the types for a given API.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListTypes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateType": {
+            "main": "./lib/actions/CreateType.js",
+            "title": "Creates a <code>Type</code> object.",
+            "description": "Creates a <code>Type</code> object.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateType.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteType": {
+            "main": "./lib/actions/DeleteType.js",
+            "title": "Deletes a <code>Type</code> object.",
+            "description": "Deletes a <code>Type</code> object.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteType.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetType": {
+            "main": "./lib/actions/GetType.js",
+            "title": "Retrieves a <code>Type</code> object.",
+            "description": "Retrieves a <code>Type</code> object.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetType.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateType": {
+            "main": "./lib/actions/UpdateType.js",
+            "title": "Updates a <code>Type</code> object.",
+            "description": "Updates a <code>Type</code> object.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateType.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "ListResolvers": {
+            "main": "./lib/actions/ListResolvers.js",
+            "title": "Lists the resolvers for a given API and type.",
+            "description": "Lists the resolvers for a given API and type.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/ListResolvers.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "CreateResolver": {
+            "main": "./lib/actions/CreateResolver.js",
+            "title": "<p>Creates a <code>Resolver</code> object.</p> <p>A resolver converts incoming requests into a format that a data source can understand and converts the data source's responses into GraphQL.</p>",
+            "description": "<p>Creates a <code>Resolver</code> object.</p> <p>A resolver converts incoming requests into a format that a data source can understand and converts the data source's responses into GraphQL.</p>",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/CreateResolver.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "DeleteResolver": {
+            "main": "./lib/actions/DeleteResolver.js",
+            "title": "Deletes a <code>Resolver</code> object.",
+            "description": "Deletes a <code>Resolver</code> object.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/DeleteResolver.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "GetResolver": {
+            "main": "./lib/actions/GetResolver.js",
+            "title": "Retrieves a <code>Resolver</code> object.",
+            "description": "Retrieves a <code>Resolver</code> object.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/GetResolver.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "UpdateResolver": {
+            "main": "./lib/actions/UpdateResolver.js",
+            "title": "Updates a <code>Resolver</code> object.",
+            "description": "Updates a <code>Resolver</code> object.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/UpdateResolver.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

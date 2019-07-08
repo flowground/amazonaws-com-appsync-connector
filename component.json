@@ -20,7 +20,7 @@
                 "label": "Custom Server URL",
                 "viewClass": "TextFieldView"
             },
-            "hmac": {
+            "auth_hmac": {
                 "label": "Authorization (hmac)",
                 "viewClass": "TextFieldView",
                 "note": "Amazon Signature authorization v4"
@@ -38,7 +38,7 @@
     "actions": {
         "ListGraphqlApis": {
             "main": "./lib/actions/ListGraphqlApis.js",
-            "title": "Lists your GraphQL APIs.",
+            "title": "ListGraphqlApis",
             "description": "Lists your GraphQL APIs.",
             "fields": {
                 "verbose": {
@@ -55,7 +55,7 @@
         },
         "CreateGraphqlApi": {
             "main": "./lib/actions/CreateGraphqlApi.js",
-            "title": "Creates a <code>GraphqlApi</code> object.",
+            "title": "CreateGraphqlApi",
             "description": "Creates a <code>GraphqlApi</code> object.",
             "fields": {
                 "verbose": {
@@ -72,7 +72,7 @@
         },
         "DeleteGraphqlApi": {
             "main": "./lib/actions/DeleteGraphqlApi.js",
-            "title": "Deletes a <code>GraphqlApi</code> object.",
+            "title": "DeleteGraphqlApi",
             "description": "Deletes a <code>GraphqlApi</code> object.",
             "fields": {
                 "verbose": {
@@ -89,7 +89,7 @@
         },
         "GetGraphqlApi": {
             "main": "./lib/actions/GetGraphqlApi.js",
-            "title": "Retrieves a <code>GraphqlApi</code> object.",
+            "title": "GetGraphqlApi",
             "description": "Retrieves a <code>GraphqlApi</code> object.",
             "fields": {
                 "verbose": {
@@ -106,7 +106,7 @@
         },
         "UpdateGraphqlApi": {
             "main": "./lib/actions/UpdateGraphqlApi.js",
-            "title": "Updates a <code>GraphqlApi</code> object.",
+            "title": "UpdateGraphqlApi",
             "description": "Updates a <code>GraphqlApi</code> object.",
             "fields": {
                 "verbose": {
@@ -123,8 +123,8 @@
         },
         "ListApiKeys": {
             "main": "./lib/actions/ListApiKeys.js",
-            "title": "<p>Lists the API keys for a given API.</p> <note> <p>API keys are deleted automatically sometime after they expire. However, they may still be included in the response until they have actually been deleted. You can safely call <code>DeleteApiKey</code> to manually delete a key before it's automatically deleted.</p> </note>",
-            "description": "<p>Lists the API keys for a given API.</p> <note> <p>API keys are deleted automatically sometime after they expire. However, they may still be included in the response until they have actually been deleted. You can safely call <code>DeleteApiKey</code> to manually delete a key before it's automatically deleted.</p> </note>",
+            "title": "ListApiKeys",
+            "description": "Lists the API keys for a given API.\n\nAPI keys are deleted automatically sometime after they expire. However, they may\nstill be included in the response until they have actually been deleted. You can\nsafely call DeleteApiKey to manually delete a key before it's automatically\ndeleted.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -140,7 +140,7 @@
         },
         "CreateApiKey": {
             "main": "./lib/actions/CreateApiKey.js",
-            "title": "Creates a unique key that you can distribute to clients who are executing your API.",
+            "title": "CreateApiKey",
             "description": "Creates a unique key that you can distribute to clients who are executing your API.",
             "fields": {
                 "verbose": {
@@ -157,7 +157,7 @@
         },
         "DeleteApiKey": {
             "main": "./lib/actions/DeleteApiKey.js",
-            "title": "Deletes an API key.",
+            "title": "DeleteApiKey",
             "description": "Deletes an API key.",
             "fields": {
                 "verbose": {
@@ -174,7 +174,7 @@
         },
         "UpdateApiKey": {
             "main": "./lib/actions/UpdateApiKey.js",
-            "title": "Updates an API key.",
+            "title": "UpdateApiKey",
             "description": "Updates an API key.",
             "fields": {
                 "verbose": {
@@ -191,7 +191,7 @@
         },
         "ListDataSources": {
             "main": "./lib/actions/ListDataSources.js",
-            "title": "Lists the data sources for a given API.",
+            "title": "ListDataSources",
             "description": "Lists the data sources for a given API.",
             "fields": {
                 "verbose": {
@@ -208,7 +208,7 @@
         },
         "CreateDataSource": {
             "main": "./lib/actions/CreateDataSource.js",
-            "title": "Creates a <code>DataSource</code> object.",
+            "title": "CreateDataSource",
             "description": "Creates a <code>DataSource</code> object.",
             "fields": {
                 "verbose": {
@@ -225,7 +225,7 @@
         },
         "DeleteDataSource": {
             "main": "./lib/actions/DeleteDataSource.js",
-            "title": "Deletes a <code>DataSource</code> object.",
+            "title": "DeleteDataSource",
             "description": "Deletes a <code>DataSource</code> object.",
             "fields": {
                 "verbose": {
@@ -242,7 +242,7 @@
         },
         "GetDataSource": {
             "main": "./lib/actions/GetDataSource.js",
-            "title": "Retrieves a <code>DataSource</code> object.",
+            "title": "GetDataSource",
             "description": "Retrieves a <code>DataSource</code> object.",
             "fields": {
                 "verbose": {
@@ -259,7 +259,7 @@
         },
         "UpdateDataSource": {
             "main": "./lib/actions/UpdateDataSource.js",
-            "title": "Updates a <code>DataSource</code> object.",
+            "title": "UpdateDataSource",
             "description": "Updates a <code>DataSource</code> object.",
             "fields": {
                 "verbose": {
@@ -276,7 +276,7 @@
         },
         "ListFunctions": {
             "main": "./lib/actions/ListFunctions.js",
-            "title": "List multiple functions.",
+            "title": "ListFunctions",
             "description": "List multiple functions.",
             "fields": {
                 "verbose": {
@@ -293,8 +293,8 @@
         },
         "CreateFunction": {
             "main": "./lib/actions/CreateFunction.js",
-            "title": "<p>Creates a <code>Function</code> object.</p> <p>A function is a reusable entity. Multiple functions can be used to compose the resolver logic.</p>",
-            "description": "<p>Creates a <code>Function</code> object.</p> <p>A function is a reusable entity. Multiple functions can be used to compose the resolver logic.</p>",
+            "title": "CreateFunction",
+            "description": "Creates a Function object.\n\nA function is a reusable entity. Multiple functions can be used to compose the\nresolver logic.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -310,7 +310,7 @@
         },
         "DeleteFunction": {
             "main": "./lib/actions/DeleteFunction.js",
-            "title": "Deletes a <code>Function</code>.",
+            "title": "DeleteFunction",
             "description": "Deletes a <code>Function</code>.",
             "fields": {
                 "verbose": {
@@ -327,7 +327,7 @@
         },
         "GetFunction": {
             "main": "./lib/actions/GetFunction.js",
-            "title": "Get a <code>Function</code>.",
+            "title": "GetFunction",
             "description": "Get a <code>Function</code>.",
             "fields": {
                 "verbose": {
@@ -344,7 +344,7 @@
         },
         "UpdateFunction": {
             "main": "./lib/actions/UpdateFunction.js",
-            "title": "Updates a <code>Function</code> object.",
+            "title": "UpdateFunction",
             "description": "Updates a <code>Function</code> object.",
             "fields": {
                 "verbose": {
@@ -361,7 +361,7 @@
         },
         "ListResolversByFunction": {
             "main": "./lib/actions/ListResolversByFunction.js",
-            "title": "List the resolvers that are associated with a specific function.",
+            "title": "ListResolversByFunction",
             "description": "List the resolvers that are associated with a specific function.",
             "fields": {
                 "verbose": {
@@ -378,7 +378,7 @@
         },
         "GetIntrospectionSchema": {
             "main": "./lib/actions/GetIntrospectionSchema.js",
-            "title": "Retrieves the introspection schema for a GraphQL API.",
+            "title": "GetIntrospectionSchema",
             "description": "Retrieves the introspection schema for a GraphQL API.",
             "fields": {
                 "verbose": {
@@ -395,7 +395,7 @@
         },
         "GetSchemaCreationStatus": {
             "main": "./lib/actions/GetSchemaCreationStatus.js",
-            "title": "Retrieves the current status of a schema creation operation.",
+            "title": "GetSchemaCreationStatus",
             "description": "Retrieves the current status of a schema creation operation.",
             "fields": {
                 "verbose": {
@@ -412,8 +412,8 @@
         },
         "StartSchemaCreation": {
             "main": "./lib/actions/StartSchemaCreation.js",
-            "title": "<p>Adds a new schema to your GraphQL API.</p> <p>This operation is asynchronous. Use to determine when it has completed.</p>",
-            "description": "<p>Adds a new schema to your GraphQL API.</p> <p>This operation is asynchronous. Use to determine when it has completed.</p>",
+            "title": "StartSchemaCreation",
+            "description": "Adds a new schema to your GraphQL API.\n\nThis operation is asynchronous. Use to determine when it has completed.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -429,7 +429,7 @@
         },
         "ListTypes": {
             "main": "./lib/actions/ListTypes.js",
-            "title": "Lists the types for a given API.",
+            "title": "ListTypes",
             "description": "Lists the types for a given API.",
             "fields": {
                 "verbose": {
@@ -446,7 +446,7 @@
         },
         "CreateType": {
             "main": "./lib/actions/CreateType.js",
-            "title": "Creates a <code>Type</code> object.",
+            "title": "CreateType",
             "description": "Creates a <code>Type</code> object.",
             "fields": {
                 "verbose": {
@@ -463,7 +463,7 @@
         },
         "DeleteType": {
             "main": "./lib/actions/DeleteType.js",
-            "title": "Deletes a <code>Type</code> object.",
+            "title": "DeleteType",
             "description": "Deletes a <code>Type</code> object.",
             "fields": {
                 "verbose": {
@@ -480,7 +480,7 @@
         },
         "GetType": {
             "main": "./lib/actions/GetType.js",
-            "title": "Retrieves a <code>Type</code> object.",
+            "title": "GetType",
             "description": "Retrieves a <code>Type</code> object.",
             "fields": {
                 "verbose": {
@@ -497,7 +497,7 @@
         },
         "UpdateType": {
             "main": "./lib/actions/UpdateType.js",
-            "title": "Updates a <code>Type</code> object.",
+            "title": "UpdateType",
             "description": "Updates a <code>Type</code> object.",
             "fields": {
                 "verbose": {
@@ -514,7 +514,7 @@
         },
         "ListResolvers": {
             "main": "./lib/actions/ListResolvers.js",
-            "title": "Lists the resolvers for a given API and type.",
+            "title": "ListResolvers",
             "description": "Lists the resolvers for a given API and type.",
             "fields": {
                 "verbose": {
@@ -531,8 +531,8 @@
         },
         "CreateResolver": {
             "main": "./lib/actions/CreateResolver.js",
-            "title": "<p>Creates a <code>Resolver</code> object.</p> <p>A resolver converts incoming requests into a format that a data source can understand and converts the data source's responses into GraphQL.</p>",
-            "description": "<p>Creates a <code>Resolver</code> object.</p> <p>A resolver converts incoming requests into a format that a data source can understand and converts the data source's responses into GraphQL.</p>",
+            "title": "CreateResolver",
+            "description": "Creates a Resolver object.\n\nA resolver converts incoming requests into a format that a data source can\nunderstand and converts the data source's responses into GraphQL.",
             "fields": {
                 "verbose": {
                     "viewClass": "CheckBoxView",
@@ -548,7 +548,7 @@
         },
         "DeleteResolver": {
             "main": "./lib/actions/DeleteResolver.js",
-            "title": "Deletes a <code>Resolver</code> object.",
+            "title": "DeleteResolver",
             "description": "Deletes a <code>Resolver</code> object.",
             "fields": {
                 "verbose": {
@@ -565,7 +565,7 @@
         },
         "GetResolver": {
             "main": "./lib/actions/GetResolver.js",
-            "title": "Retrieves a <code>Resolver</code> object.",
+            "title": "GetResolver",
             "description": "Retrieves a <code>Resolver</code> object.",
             "fields": {
                 "verbose": {
@@ -582,7 +582,7 @@
         },
         "UpdateResolver": {
             "main": "./lib/actions/UpdateResolver.js",
-            "title": "Updates a <code>Resolver</code> object.",
+            "title": "UpdateResolver",
             "description": "Updates a <code>Resolver</code> object.",
             "fields": {
                 "verbose": {
